@@ -1,0 +1,14 @@
+sequenceDiagram 
+    participant browser 
+    participant server 
+
+    Note right of browser: User writes a new note in the text box and clicks Save 
+    Note right of browser: Only one request to the server is needed with SPA 
+
+    browser->>server: POST https://studies.cs.helskinki.fi/exampleapp/spa
+    activate server 
+    Note right of browser: Request body: {content: "single page app does not reload the whole page", date: "2019-05-25T15:15:59.905Z"}
+    server->>browser: HTTP status code 201 (created)
+    server deactivate
+
+
