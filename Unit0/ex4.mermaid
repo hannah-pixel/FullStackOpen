@@ -3,9 +3,6 @@ sequenceDiagram
     participant server 
     participant user 
 
-    user->>writes something in the text field of note 
-    user->>clicks Save button
-
     browser->>POST https://fullstack-exampleapp.herokuapp.com/new_note
     activate server 
     server-->>browser: HTTP status code 302 (URL redirect)
